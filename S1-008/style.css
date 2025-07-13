@@ -1,0 +1,47 @@
+ .traffic-light {
+  width: 100px;
+  background: gray;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.red, .green, .yellow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #292929;
+  opacity: 0.3;
+  transition: background 0.3s, opacity 0.3s;
+  margin: 0 auto;
+}
+
+.traffic-light:hover .red {
+  animation: redOn 1s infinite;
+}
+.traffic-light:hover .yellow {
+  animation: yellowOn 1s infinite;
+}
+.traffic-light:hover .green {
+  animation: greenOn 1s infinite;
+}
+
+@keyframes redOn {
+  0%   { opacity: 1; background: red; }
+  50%  { opacity: 0.3; background: #292929; }
+  100% { opacity: 0.3; background: #292929; }
+}
+
+@keyframes yellowOn {
+  0%   { opacity: 0.3; background: #292929; }
+  50%  { opacity: 1; background: yellow; }
+  100% { opacity: 0.3; background: #292929; }
+}
+
+@keyframes greenOn {
+  0%  { opacity: 0.3; background: #292929; }
+  50%  { opacity: 0.3; background: #292929; }
+  100%   { opacity: 1; background: limegreen; }
+}
